@@ -23,6 +23,7 @@ app.use(morgan("dev"));
 
 // Define Routes
 app.use("/api/sample", require("./routes/api/sample"));
+app.use("/api/spawnWords", require("./routes/api/spawnWords"));
 //app.use('/api/user', middleware, require('./routes/api/user'));
 
 // Serve static assets in production

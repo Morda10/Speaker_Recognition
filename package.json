@@ -26,6 +26,7 @@
     "express-fileupload": "^1.2.0",
     "express-validator": "^6.4.0",
     "formik": "^2.1.4",
+    "helmet": "^4.2.0",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "moment": "^2.24.0",
@@ -35,6 +36,7 @@
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "request": "^2.88.2",
+    "xss-clean": "^0.1.1",
     "yup": "^0.28.3"
   },
   "devDependencies": {

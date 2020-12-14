@@ -4,7 +4,8 @@ const express = require("express");
 const fileUpload = require("express-fileupload");
 const connectDB = require("./config/db");
 const path = require("path");
-
+const xss = require('xss-clean')
+const helmet = require('helmet')
 const app = express();
 
 app.use(
@@ -12,6 +13,11 @@ app.use(
     createParentPath: true,
   })
 );
+
+app.use(express.json({ limit: '10kb' })); // Body limit is 10
+app.use(xss()); // sanitize user input coming from POST body, GET queries, and url params
+app.use(helmet()); // secure app by setting various http headers
+
 
 // Connect Database
 connectDB();

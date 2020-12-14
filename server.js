@@ -14,10 +14,16 @@ app.use(
   })
 );
 
+
+// Set up server side defenses
 app.use(express.json({ limit: '10kb' })); // Body limit is 10
 app.use(xss()); // sanitize user input coming from POST body, GET queries, and url params
 app.use(helmet()); // secure app by setting various http headers
 
+
+// TODO:
+// Set up open SSL protocol with letsEncrypt
+// *****************************************
 
 // Connect Database
 connectDB();
